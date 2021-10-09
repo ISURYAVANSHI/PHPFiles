@@ -6,6 +6,7 @@
   /* Connect to MySQL and select the database. */
  $connection=mysqli_connect("database-1.cnmnillb4pd8.us-east-1.rds.amazonaws.com","admin","Born2win");
 
+
   if (mysqli_connect_errno()) echo "Failed to connect to MySQL: " . mysqli_connect_error();
 
 $sql123  = "CREATE DATABASE database123";
