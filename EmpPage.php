@@ -3,8 +3,13 @@
 <h1>Employee page</h1>
 <?php
 
+define('DB_SERVER', 'database-1.cnmnillb4pd8.us-east-1.rds.amazonaws.com');
+define('DB_USERNAME', 'admin');
+define('DB_PASSWORD', 'Born2win');
+  
   /* Connect to MySQL and select the database. */
- $connection=mysqli_connect("database-1.cnmnillb4pd8.us-east-1.rds.amazonaws.com","admin","Born2win");
+  $connection=mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD);
+/* $connection=mysqli_connect("database-1.cnmnillb4pd8.us-east-1.rds.amazonaws.com","admin","Born2win");*/
 
 
   if (mysqli_connect_errno()) echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -12,11 +17,8 @@
 $sql123  = "CREATE DATABASE database123";
 if ($connection->query($sql123) === TRUE) {
   echo "Database created successfully";
-} else {
+} 
 $database = mysqli_select_db($connection, "database123");
-/* $database = mysqli_select_db($connection, "database123"); */
-}
-
 
 
 
