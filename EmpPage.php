@@ -112,7 +112,7 @@ function VerifyEmployeesTable($connection, $dbName) {
          ADDRESS VARCHAR(90)
        )";
 
-     if(!mysqli_query($connection, $query)) echo("<p>Error creating table.</p>");
+   
   }
 }
 
