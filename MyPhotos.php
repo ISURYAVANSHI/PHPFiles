@@ -86,6 +86,28 @@ if (!isset($_GET["Cleanup"])) {
         $blob = $blobClient->getBlob($containerName, $fileToUpload);
         fpassthru($blob->getContentStream());
         echo "<br />";
+      
+      
+      <form action="<?PHP echo $_SERVER['MyPhotos.php'] ?>" method="POST">
+  <table border="0">
+    <tr>
+      <td>NAME1</td>
+      <td>ADDRESS1</td>
+    </tr>
+    <tr>
+      <td>
+        <input type="text" name="NAME1" maxlength="45" size="30" />
+      </td>
+      <td>
+        <input type="text" name="ADDRESS1" maxlength="90" size="60" />
+      </td>
+      <td>
+        <input type="submit1" value="Add Data" />
+      </td>
+    </tr>
+  </table>
+</form>
+      
     }
     catch(ServiceException $e){
         // Handle exception based on error codes and messages.
@@ -109,6 +131,26 @@ else
 
     try{
         // Delete container.
+      
+      <form action="<?PHP echo $_SERVER['MyPhotos.php'] ?>" method="POST">
+  <table border="0">
+    <tr>
+      <td>NAME2</td>
+      <td>ADDRESS2</td>
+    </tr>
+    <tr>
+      <td>
+        <input type="text" name="NAME2" maxlength="45" size="30" />
+      </td>
+      <td>
+        <input type="text" name="ADDRESS2" maxlength="90" size="60" />
+      </td>
+      <td>
+        <input type="submit2" value="Add Data" />
+      </td>
+    </tr>
+  </table>
+</form>
         echo "Deleting Container".PHP_EOL;
         echo $_GET["containerName"].PHP_EOL;
         echo "<br />";
