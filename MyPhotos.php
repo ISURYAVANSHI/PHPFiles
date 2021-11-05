@@ -9,7 +9,6 @@
       <label  class="form-label">Name</label>
       <input type="text" class="form-control" id="exampleInputEmail1" name="name" required >
     
-      <input type="submit" value="submit"  name="submit">
     </form>
   </body>
 </html>
