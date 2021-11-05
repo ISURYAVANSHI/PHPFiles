@@ -1,14 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>HTML Form</title>
-  </head>
-  <body>
-    <h1>Form</h1>
-    <form method="POST" action="MyPhotos.php" enctype="multipart/form-data" >
-      <label  class="form-label">Name</label>
-      <input type="text" class="form-control" id="exampleInputEmail1" name="name" required >
-    
-    </form>
-  </body>
+<html>
+<body>
+<h1>MyPhotos</h1>
+<!-- Input form -->
+<form action="<?PHP echo $_SERVER['MyPhotos.php'] ?>" method="POST">
+  <table border="0">
+    <tr>
+      <td>NAME</td>
+      <td>ADDRESS</td>
+    </tr>
+    <tr>
+      <td>
+        <input type="text" name="NAME" maxlength="45" size="30" />
+      </td>
+      <td>
+        <input type="text" name="ADDRESS" maxlength="90" size="60" />
+      </td>
+      <td>
+        <input type="submit" value="Add Data" />
+      </td>
+    </tr>
+  </table>
+</form>
+</body>
 </html>
