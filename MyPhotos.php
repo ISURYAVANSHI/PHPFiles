@@ -7,8 +7,8 @@
     <h1>Form</h1>
     <form method="POST" action="MyPhotos.php" enctype="multipart/form-data" >
       <label  class="form-label">Name</label>
-      <input type="text" class="form-control" id="exampleInputEmail1" name="name" required > <br><br>
-      </br>
+      <input type="text" class="form-control" id="exampleInputEmail1" name="name" required >
+    
       <input type="submit" value="submit"  name="submit">
     </form>
   </body>
