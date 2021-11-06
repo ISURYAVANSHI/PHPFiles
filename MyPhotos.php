@@ -33,7 +33,7 @@ use MicrosoftAzure\Storage\Blob\Models\ListBlobsOptions;
 use MicrosoftAzure\Storage\Blob\Models\CreateContainerOptions;
 use MicrosoftAzure\Storage\Blob\Models\PublicAccessType;
 
-$connectionString ="DefaultEndpointsProtocol=https;AccountName=peachess;AccountKey=uG9PwV9CDNsqLhZal2NQS5FaFy+tj3Yl8NIRVtTdwwOMmTo4+VtkDciAn9EsyNKgjhoUS+qzc2jRRqrYmx8k0Q==";
+$connectionString = "DefaultEndpointsProtocol=https;AccountName=peachess;AccountKey=Svz5dXOFs3Hny7UDfJvNlFVP41IbpZNuu0dmazCMUUTWnf4449cz97WWuflLDN/qav5m/Otc4nSvnfwropksqw==" ;
 
 $blobClient = BlobRestProxy::createBlobService($connectionString);
 $fileToUpload = "/var/www/html/index.php";
@@ -42,7 +42,7 @@ if (!isset($_GET["Cleanup"])) {
   
 
 
-      $containerName = "myphotos";
+      $containerName = "linux";
 
     try {
         
