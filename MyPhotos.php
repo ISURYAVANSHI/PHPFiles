@@ -61,7 +61,7 @@ if (!isset($_GET["Cleanup"])) {
 
 
         $listBlobsOptions = new ListBlobsOptions();
-        $listBlobsOptions->setPrefix("index");
+        $listBlobsOptions->setPrefix("");
 
         echo "These are the blobs present in the container: ";
         do{
@@ -69,6 +69,12 @@ if (!isset($_GET["Cleanup"])) {
             foreach ($result->getBlobs() as $blob)
             {
                 echo $blob->getName().": ".$blob->getUrl()."<br/>";
+                fpassthru($blob->getContentStream());
+               echo "Displaying the blob contents.\n";
+    fpassthru($stream);
+    fclose($stream);
+              echo "\n";
+               echo "<br/>";
             }
         
             $listBlobsOptions->setContinuationToken($result->getContinuationToken());
