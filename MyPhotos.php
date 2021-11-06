@@ -32,6 +32,9 @@ use MicrosoftAzure\Storage\Common\Exceptions\ServiceException;
 use MicrosoftAzure\Storage\Blob\Models\ListBlobsOptions;
 use MicrosoftAzure\Storage\Blob\Models\CreateContainerOptions;
 use MicrosoftAzure\Storage\Blob\Models\PublicAccessType;
+use MicrosoftAzure\Storage\Blob\Models\GetBlobResult;
+use WindowsAzure\Common\ServicesBuilder;
+use WindowsAzure\Blob\Models\ListContainersOptions;
 
 $connectionString = "DefaultEndpointsProtocol=https;AccountName=peachess;AccountKey=Svz5dXOFs3Hny7UDfJvNlFVP41IbpZNuu0dmazCMUUTWnf4449cz97WWuflLDN/qav5m/Otc4nSvnfwropksqw==" ;
 
@@ -69,9 +72,10 @@ if (!isset($_GET["Cleanup"])) {
             foreach ($result->getBlobs() as $blob)
             {
                 echo $blob->getName().": ".$blob->getUrl()."<br/>";
-                fpassthru($blob->getContentStream());
+              $stream = $blob->getContentStream();
+                fpassthru($stream);
                echo "Displaying the blob contents.\n";
-    fpassthru($stream);
+   
     fclose($stream);
               echo "\n";
                echo "<br/>";
@@ -84,7 +88,7 @@ if (!isset($_GET["Cleanup"])) {
      
         echo "This is the content of the blob uploaded: ";
         $blob = $blobClient->getBlob($containerName, $fileToUpload);
-        fpassthru($blob->getContentStream());
+          fpassthru($blob->getContentStream());
         echo "<br/>";
     }
     catch(ServiceException $e){
