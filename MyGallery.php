@@ -19,7 +19,7 @@ use WindowsAzure\Blob\Models\ListContainersOptions;
 $connectionString = "DefaultEndpointsProtocol=https;AccountName=peachess;AccountKey=0xqUBMaFr/7SiKj2LJPYnW29Esc5mPfYyFccZq6swVZBdpVRCD2dsdv1uaAO1pYvfIuFcfU7cNPHfG1SpjcGAQ==";
 
 $blobClient = BlobRestProxy::createBlobService($connectionString);
-$fileToUpload = "/var/www/html/index.php";
+$fileToUpload = "/var/www/html/MyGallery.html";
 
 if (!isset($_GET["Cleanup"])) {
   
