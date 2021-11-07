@@ -16,10 +16,10 @@ use WindowsAzure\Common\ServicesBuilder;
 use WindowsAzure\Blob\Models\ListContainersOptions;
      
 
-$connectionString = "DefaultEndpointsProtocol=https;AccountName=peachess;AccountKey=aiEPPqxZgdkCSvPQDq8CH8ZCjr2wAIaEX+5pPycqpJRSSKx16JM45DZIcsHp6UhV9zFTN9hVVb7EdS603hTp2Q==";
+$connectionString = "DefaultEndpointsProtocol=https;AccountName=peachess;AccountKey=0xqUBMaFr/7SiKj2LJPYnW29Esc5mPfYyFccZq6swVZBdpVRCD2dsdv1uaAO1pYvfIuFcfU7cNPHfG1SpjcGAQ==";
 
 $blobClient = BlobRestProxy::createBlobService($connectionString);
-$fileToUpload = "/var/www/html/HelloWorld.txt";
+$fileToUpload = "/var/www/html/index.php";
 
 if (!isset($_GET["Cleanup"])) {
   
