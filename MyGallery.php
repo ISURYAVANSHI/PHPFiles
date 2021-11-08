@@ -16,8 +16,7 @@ use WindowsAzure\Common\ServicesBuilder;
 use WindowsAzure\Blob\Models\ListContainersOptions;
      
 
-$connectionString = "DefaultEndpointsProtocol=https;AccountName=peachess;AccountKey=0xqUBMaFr/7SiKj2LJPYnW29Esc5mPfYyFccZq6swVZBdpVRCD2dsdv1uaAO1pYvfIuFcfU7cNPHfG1SpjcGAQ==";
-
+$connectionString = "DefaultEndpointsProtocol=https;AccountName=peachess;AccountKey=+kjiSEMPHEBqJPiQJKLhKXNt1CslN8qMz38Q+KgLB8/vkjhYU0cYFqFY5kXykYtoyxM4MSJjqFbyE4bqEvF3Bg==";
 $blobClient = BlobRestProxy::createBlobService($connectionString);
 $fileToUpload = "/var/www/html/MyGallery.html";
 
@@ -44,7 +43,7 @@ if (!isset($_GET["Cleanup"])) {
 
 
         $listBlobsOptions = new ListBlobsOptions();
-        $listBlobsOptions->setPrefix("");
+        $listBlobsOptions->setPrefix("sad");
 
         echo "These are the blobs present in the container: ";
         do{
@@ -53,11 +52,17 @@ if (!isset($_GET["Cleanup"])) {
             {
                 echo $blob->getName().": ".$blob->getUrl()."<br/>";
                  echo "Displaying the blob contents.\n";
-              $url = $blob->getUrl();
+               $url = $blob->getUrl();
               
-             $blob1 = $blobClient->getBlob($containerName,$url);
+                           
+                  $blob3 = $blobClient3->getBlob($containerName,'sad.jpeg'); 
+                 fpassthru($blob3->getContentStream());
+                 fclose($blob3->getContentStream());
+                 
+                 $blob1 = $blobClient1->getBlob($containerName,$url); 
                  fpassthru($blob1->getContentStream());
                  fclose($blob1->getContentStream());
+
     
               echo "\n";
                echo "<br/>";
@@ -69,8 +74,8 @@ if (!isset($_GET["Cleanup"])) {
 
      
         echo "This is the content of the blob uploaded: ";
-        $blob = $blobClient->getBlob($containerName, $fileToUpload);
-          fpassthru($blob->getContentStream());
+        $blob2 = $blobClient2->getBlob($containerName, $fileToUpload);
+          fpassthru($blob2->getContentStream());
         echo "<br/>";
     }
     catch(ServiceException $e){
