@@ -47,7 +47,7 @@ $url = $blob->getUrl();
 
 $arr[$i] = $url;
 $i = $i+1;
-echo $arr[$i];
+
 }
 $len = count($arr);
 echo $len;
