@@ -20,13 +20,14 @@ $connectionString = "DefaultEndpointsProtocol=https;AccountName=peachess;Account
 $blobClient = BlobRestProxy::createBlobService($connectionString);
 $listBlobsOptions = new ListBlobsOptions();
 $listBlobsOptions->setPrefix("");
+$containerName = "gallery";
 $blobList = $blobClient->listBlobs($containerName, $listBlobsOptions);
 
 echo "<br/>";
 echo "Apple";
 if (!isset($_GET["Cleanup"])) 
 {
-$containerName = "gallery";
+
 echo $containerName; 
 
 try  
