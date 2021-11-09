@@ -15,9 +15,8 @@ use WindowsAzure\Common\ServicesBuilder;
 use WindowsAzure\Blob\Models\ListContainersOptions;
      
 $connectionString = "DefaultEndpointsProtocol=https;AccountName=peachess;AccountKey=6EQiMaYP05LTuauMh8IhDQH7ccvgyOMmObEGO4XBln9ZyvkpRIU0tuodHjN/Y2GmMM5cl6IljKPGc3Aa5+xTNQ==";
-$blobClient = BlobRestProxy::createBlobService($connectionString);
 $listBlobsOptions = new ListBlobsOptions();
-$listBlobsOptions->setPrefix("");
+$listBlobsOptions->setPrefix("sad");
 $containerName = "gallery";
 
 echo "Apple";
@@ -30,7 +29,7 @@ try
 {
 
 echo "Banana";
-
+$blobClient = BlobRestProxy::createBlobService($connectionString);
 $blobList = $blobClient->listBlobs($containerName, $listBlobsOptions);
 echo "Cherry";
 $i = 1;
