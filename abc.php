@@ -21,7 +21,6 @@ $blobClient = BlobRestProxy::createBlobService($connectionString);
 $listBlobsOptions = new ListBlobsOptions();
 $listBlobsOptions->setPrefix("");
 $containerName = "gallery";
-$blobList = $blobClient->listBlobs($containerName, $listBlobsOptions);
 
 echo "<br/>";
 echo "Apple";
@@ -35,17 +34,15 @@ try
 
 echo "Banana";
 
-
-
+$blobList = $blobClient->listBlobs($containerName, $listBlobsOptions);
 echo "Cherry";
-
 $i = 1;
 foreach($blobList->getBlobs() as $blob) 
 {
-$name = $blob->getName();
 
 $url = $blob->getUrl();
-
+echo $url;
+     
 $arr[$i] = $url;
 $i = $i+1;
 
