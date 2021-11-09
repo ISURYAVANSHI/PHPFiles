@@ -14,7 +14,7 @@ use MicrosoftAzure\Storage\Blob\Models\GetBlobResult;
 use WindowsAzure\Common\ServicesBuilder;
 use WindowsAzure\Blob\Models\ListContainersOptions;
      
-$connectionString = "DefaultEndpointsProtocol=https;AccountName=peachess;AccountKey=+kjiSEMPHEBqJPiQJKLhKXNt1CslN8qMz38Q+KgLB8/vkjhYU0cYFqFY5kXykYtoyxM4MSJjqFbyE4bqEvF3Bg==";
+$connectionString = "DefaultEndpointsProtocol=https;AccountName=peachess;AccountKey=6EQiMaYP05LTuauMh8IhDQH7ccvgyOMmObEGO4XBln9ZyvkpRIU0tuodHjN/Y2GmMM5cl6IljKPGc3Aa5+xTNQ==";
 $blobClient = BlobRestProxy::createBlobService($connectionString);
 $listBlobsOptions = new ListBlobsOptions();
 $listBlobsOptions->setPrefix("");
@@ -53,6 +53,7 @@ catch(ServiceException $e){
   
 $code = $e->getCode();
 $error_message = $e->getMessage();
+echo $e;
 echo $code.": ".$error_message."<br/>";
 }
 }
