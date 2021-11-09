@@ -15,41 +15,32 @@ use WindowsAzure\Common\ServicesBuilder;
 use WindowsAzure\Blob\Models\ListContainersOptions;
      
 $connectionString = "DefaultEndpointsProtocol=https;AccountName=peachess;AccountKey=6EQiMaYP05LTuauMh8IhDQH7ccvgyOMmObEGO4XBln9ZyvkpRIU0tuodHjN/Y2GmMM5cl6IljKPGc3Aa5+xTNQ==";
+$containerName = "gallery";
 $listBlobsOptions = new ListBlobsOptions();
 $listBlobsOptions->setPrefix("sad");
-$containerName = "gallery";
 
-echo "Apple";
 if (!isset($_GET["Cleanup"])) 
 {
-
-echo $containerName; 
-
 try  
 {
-
-echo "Banana";
+echo "Apple";
 $blobClient = BlobRestProxy::createBlobService($connectionString);
 $blobList = $blobClient->listBlobs($containerName, $listBlobsOptions);
-echo "Cherry";
+     
+echo "Banana";
 $i = 1;
 foreach($blobList->getBlobs() as $blob) 
 {
-
 $url = $blob->getUrl();
 echo $url;
-     
 $arr[$i] = $url;
 $i = $i+1;
-
 }
 $len = count($arr);
 echo $len;
-
 }
 
 catch(ServiceException $e){
-  
 $code = $e->getCode();
 $error_message = $e->getMessage();
 echo $e;
